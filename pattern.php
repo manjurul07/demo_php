@@ -1,24 +1,96 @@
+<?php 
+
+	if (isset($_POST['btn'])) {
+
+		$n = $_POST['size'];
+		$pat = $_POST['pattern'];
+
+		if ($pat == "pattern_one") {
+
+			for ($i=1; $i <= $n; $i++) { 
+			for ($j=1; $j <= $i; $j++) { 
+						echo "*";
+					}
+				echo "<br>";
+				}
+		}
+
+		elseif ($pat == "pattern_two") {
+			for ($i=1; $i <= $n; $i++) { 
+
+				for ($j=1; $j <= $n - $i; $j++) { 
+						echo "&nbsp;&nbsp;";
+					}
+				for ($j=1; $j <= $i; $j++) { 
+							echo "*";
+						}
+				echo "<br>";
+				}
+		}
+
+		elseif ($pat == "pattern_three") {
+			for ($i=1; $i <= $n; $i++) { 
+
+				for ($j=1; $j <= $n - $i; $j++) { 
+						echo "&nbsp;&nbsp;";
+					}
+				for ($j=1; $j <= $i*2-1; $j++) { 
+							echo "*";
+						}
+				echo "<br>";
+				}
+		}
+		elseif ($pat == "pattern_four") {
+			for ($i=1; $i <= $n; $i++) { 
+
+				for ($j=1; $j <= $n - $i; $j++) { 
+						echo "&nbsp;&nbsp;";
+					}
+				for ($j=1; $j <= $i*2-1; $j++) { 
+							echo "*";
+						}
+				echo "<br>";
+				}
+			for ($i= $n; $i >= 1; $i--) { 
+
+				for ($j=1; $j <= $n - $i; $j++) { 
+						echo "&nbsp;&nbsp;";
+					}
+
+				for ($j=1; $j <= $i*2-1; $j++) { 
+							echo "*";
+						}
+				
+				echo "<br>";
+				}
+		}
+		
+	}
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pattern</title>
+	<title>pattern</title>
 </head>
 <body>
 
 	<form action="" method="POST">
 		<select name="size">
-			<option value="5">Small</option>
-			<option value="7">Medium</option>
-			<option value="9">Large</option>
+			<option value="5" <?php echo (isset($_POST['size']) && $_POST['size'] == '5') ? 'selected="selected"' : "" ;;?> >Small</option>
+			<option value="7" <?php echo (isset($_POST['size']) && $_POST['size'] == '7') ? 'selected="selected"' : "" ;;?>>Medium</option>
+			<option value="9" <?php echo (isset($_POST['size']) && $_POST['size'] == '9') ? 'selected="selected"' : "" ;; ?>>Large</option>
 		</select>
 		<select name="pattern">
-			<option>partten 1</option>
-			<option>partten 2</option>
-			<option>partten 3</option>
+			<option value="pattern_one" <?php echo (isset($_POST['pattern']) && $_POST['pattern'] === "pattern_one") ? 'selected="selected"' : "" ?>>partten 1</option>
+			<option value="pattern_two" <?php echo (isset($_POST['pattern']) && $_POST['pattern'] === "pattern_two") ? 'selected="selected"' : "" ?>>partten 2</option>
+			<option value="pattern_three" <?php echo (isset($_POST['pattern']) && $_POST['pattern'] === "pattern_three") ? 'selected="selected"' : "" ?>>partten 3</option>
+			<option value="pattern_four" <?php echo (isset($_POST['pattern']) && $_POST['pattern'] === "pattern_four") ? 'selected="selected"' : "" ?>>partten 4</option>
 		</select>
-		<input type="submit" name="btn">
+		<input type="submit" name="btn" value="show">
 	</form>
 
 </body>
