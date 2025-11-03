@@ -9,7 +9,7 @@
 
     <style>
         .form-user {
-            width: 40vw;
+            width: 50vw;
         }
     </style>
 </head>
@@ -26,6 +26,9 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+    </div>
+    <div class="output">
+        
     </div>
 
     <!-- Bootstrap JS -->

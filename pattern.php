@@ -5,17 +5,17 @@
 		$n = $_POST['size'];
 		$pat = $_POST['pattern'];
 
-		if ($pat == "pattern_one") {
+		function pattern_1 ($n){
+			for ($i=1; $i <= $n; $i++) {
 
-			for ($i=1; $i <= $n; $i++) { 
-			for ($j=1; $j <= $i; $j++) { 
+				for ($j=1; $j <= $i; $j++) { 
 						echo "*";
 					}
 				echo "<br>";
-				}
+			}
 		}
 
-		elseif ($pat == "pattern_two") {
+		function pattern_2($n){
 			for ($i=1; $i <= $n; $i++) { 
 
 				for ($j=1; $j <= $n - $i; $j++) { 
@@ -28,7 +28,8 @@
 				}
 		}
 
-		elseif ($pat == "pattern_three") {
+		function pattern_3($n){
+
 			for ($i=1; $i <= $n; $i++) { 
 
 				for ($j=1; $j <= $n - $i; $j++) { 
@@ -40,7 +41,9 @@
 				echo "<br>";
 				}
 		}
-		elseif ($pat == "pattern_four") {
+
+		function pattern_4($n){
+			
 			for ($i=1; $i <= $n; $i++) { 
 
 				for ($j=1; $j <= $n - $i; $j++) { 
@@ -51,7 +54,7 @@
 						}
 				echo "<br>";
 				}
-			for ($i= $n; $i >= 1; $i--) { 
+			for ($i= $n-1; $i >= 1; $i--) { 
 
 				for ($j=1; $j <= $n - $i; $j++) { 
 						echo "&nbsp;&nbsp;";
@@ -64,8 +67,34 @@
 				echo "<br>";
 				}
 		}
+
+
+		if ($pat == "pattern_one") {
+
+			pattern_1($n);
+			
+		}
+
+		elseif ($pat == "pattern_two") {
+			
+			pattern_2($n);
+
+		}
+
+		elseif ($pat == "pattern_three") {
+			
+			pattern_3($n);
+
+		}
+		elseif ($pat == "pattern_four") {
+			
+			pattern_4($n);
+
+		}
 		
 	}
+
+	
 
  ?>
 
@@ -95,3 +124,40 @@
 
 </body>
 </html>
+
+
+<?php 
+
+	// function sayHello() {
+
+	// 	echo "Hello World";
+
+	// }
+
+	// sayHello();
+
+	// echo "<br>";	echo "<br>";
+
+	// function hello($name){
+
+	// 	echo "Hello, $name";
+
+	// }
+
+	// hello("Manjurul Hasan");
+
+	// echo "<br>";	echo "<br>";
+
+	// function add($a,$b)
+	// {
+	// 	return $a + $b ;
+	// }
+
+	// $result = add(10,22);
+
+	// echo "Sum : $result";
+
+	// echo "<br>";	echo "<br>";
+
+	
+?>
